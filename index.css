@@ -1,0 +1,13 @@
+.page-content{
+  padding:12px;
+}
+.page-info{
+  display: flex;
+}
+.page-info .dataTables_length{
+  padding:10px;
+}
+
+.margin-top-10{
+  margin-top:10px;
+}
