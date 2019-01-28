@@ -7,10 +7,15 @@
 	<title>DataTables dynamic columns</title>
   <link rel="stylesheet" type="text/css" href="DataTables-1.10.15//media/css/jquery.dataTables.css">
   <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="artDialog-6.0.4/css/ui-dialog.css">
+  <link rel="stylesheet" type="text/css" href="jquery-ui-1.10.4/jquery-ui-1.10.4.custom.min.css">
   <link rel="stylesheet" type="text/css" href="index.css">
 
-	<script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.12.4.js"></script>
+  <script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.12.4.js"></script>
+  <script type="text/javascript" language="javascript" src="jquery-ui-1.10.4/jquery-ui-1.10.4.custom.min.js"></script>
   <script type="text/javascript" language="javascript" src="DataTables-1.10.15/media/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" language="javascript" src="art-template-4.13.1/template-web.js"></script>
+  <script type="text/javascript" language="javascript" src="artDialog-6.0.4/dist/dialog-min.js"></script>
   <script type="text/javascript" language="javascript" src="pageSearch.js"></script>
 	<script type="text/javascript" language="javascript" src="index.js"></script>
 </head>
@@ -24,24 +29,21 @@
     <div class="row margin-top-10">
       <div class="col-xs-12">
           <table id="page-table" class="table table-bordered table-hover">
-              <thead>
-                <!-- <tr>
-                  <th>Column1</th>
-                  <th>Column2</th>
-                  <th>Column3</th>
-                  <th>Column4</th>
-                  <th>Column5</th>
-                  <th>Column6</th>
-                  <th>Column7</th>
-                  <th>Column8</th>
-                  <th>Column9</th>
-                  <th>Column10</th>
-                </tr> -->
-              </thead>
+              <thead></thead>
               <tbody></tbody>
           </table>
       </div>
     </div>
   </div>
+
+  <!-- 设置模板 -->
+  <script id="setting-template" type="text/html">
+    <ul id="sortable">
+      <li class="ui-state-default">
+        <span>Item 1</span>
+        <input type="checkbox" name="display" title="是否展示" />
+      </li>
+    </ul>
+  </script>
 </body>
 </html>

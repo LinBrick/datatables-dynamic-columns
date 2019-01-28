@@ -9,7 +9,7 @@
     customColumns:{
       pageId: '',//(必填)自定义列需要用到的id 必须唯一
       pageFieldList: [],//(必填)页面字段配置
-      columns: null,//(必填)列配置项
+      columns: null,//列配置项
       columnDefaults: null
     },
     DataTable:{}//保留dataTables参数
@@ -46,7 +46,12 @@
     },
     // 事件绑定
     events:function(){
-
+      var that = this;
+      var opts = this.options;
+      //设置
+      $(opts.settingBtn,opts.container).click(function(){
+        that.actionSetting();
+      });
     },
     // 把数据转成dataTables需要的格式
     handleDataTableOption:function(){
@@ -86,6 +91,26 @@
       });
       thead += '</tr>';
       $('thead', that.options.table).html(thead);
+    },
+    // 开始设置
+    actionSetting:function(){
+      var list = this.options.customColumns.pageFieldList;
+      dialog({
+        title:'设置',
+        content:template('setting-template', {
+          list:list
+        }),
+        width:300,
+        height:300,
+        onshow:function(){
+          $('#sortable',this.node).sortable().disableSelection();
+        },
+        skin:'scroll-y',
+        okValue:'保存',
+        ok:function(){},
+        cancelValue:'取消',
+        cancel:true
+      }).showModal();
     }
   });
 

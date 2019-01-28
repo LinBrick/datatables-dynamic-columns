@@ -7,7 +7,24 @@
 .page-info .dataTables_length{
   padding:10px;
 }
-
 .margin-top-10{
   margin-top:10px;
+}
+#sortable { 
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0; 
+}
+#sortable li{ 
+  margin: 0 3px 3px 3px; 
+  padding:5px; 
+  position: relative;
+}
+#sortable li input{ 
+  position: absolute;
+  right:10px;
+}
+.scroll-y .ui-dialog-content {
+  overflow-x: hidden;
+  overflow-y: auto;
 }

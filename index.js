@@ -70,33 +70,31 @@ $(document).ready(function() {
         column9:'Row ' + (i + 1) + ' Data 9',
         column10:'Row ' + (i + 1) + ' Data 10'
       });
-      // var row = [];
-      // for(var j = 0;j < 10;j++){
-      //   row.push('Row ' + (i + 1) + ' Data ' + (j + 1));
-      // }
-      // dataList.push(row);
     }
   }());
   
   new $.pageSearch({
     customColumns:{
       pageId:'0000001',
-      pageFieldList:pageFieldList
+      pageFieldList:pageFieldList,
+      // dataTables的columns参数写这里
+      columns:{
+        column1:{
+          width:200
+        }
+      },
+      // dataTables的columns参数写这里
+      aoColumnDefs:{
+        column2:{
+          width:200,
+          mRender: function (data, type, full) {
+            return 'custom ' + data;
+          }
+        }
+      }
     },
     DataTable:{
-      data: dataList,
-    //   columns: [
-    //     { data: 'column1' },
-    //     { data: 'column2' },
-    //     { data: 'column3' },
-    //     { data: 'column4' },
-    //     { data: 'column5' },
-    //     { data: 'column6' },
-    //     { data: 'column7' },
-    //     { data: 'column8' },
-    //     { data: 'column9' },
-    //     { data: 'column10' }
-    // ],
+      data: dataList
     }
   });
 
