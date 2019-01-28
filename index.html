@@ -10,21 +10,22 @@
   <link rel="stylesheet" type="text/css" href="index.css">
 
 	<script type="text/javascript" language="javascript" src="http://code.jquery.com/jquery-1.12.4.js"></script>
-	<script type="text/javascript" language="javascript" src="DataTables-1.10.15/media/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" language="javascript" src="DataTables-1.10.15/media/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" language="javascript" src="pageSearch.js"></script>
 	<script type="text/javascript" language="javascript" src="index.js"></script>
 </head>
 <body>
-  <div class="page-content">
+  <div class="page-content" id="my-page">
     <div class="row">
       <div class="col-xs-12">
-        <button class="btn btn-primary">设置</button>
+        <button class="btn btn-primary" id="setting">设置</button>
       </div>
     </div>
     <div class="row margin-top-10">
       <div class="col-xs-12">
-          <table id="example" class="table table-bordered table-hover" cellspacing="0" width="100%">
+          <table id="page-table" class="table table-bordered table-hover">
               <thead>
-                <tr>
+                <!-- <tr>
                   <th>Column1</th>
                   <th>Column2</th>
                   <th>Column3</th>
@@ -35,7 +36,7 @@
                   <th>Column8</th>
                   <th>Column9</th>
                   <th>Column10</th>
-                </tr>
+                </tr> -->
               </thead>
               <tbody></tbody>
           </table>
