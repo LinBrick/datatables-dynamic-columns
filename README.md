@@ -5,6 +5,8 @@
 
 注意：此例子只是演示这种设计思路，大家可以根据此例子派生，实现自己在项目中需要的效果。
 
+![演示图](https://ll527563266.github.io/datatables-dynamic-columns/demo.gif)
+
 # html
 ```html
   <table id="page-table">
