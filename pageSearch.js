@@ -34,7 +34,7 @@
         scrollY: 400 // 表格里使用滚动
       });
     },
-    //初始化dataTables
+    // 初始化dataTables
     initTable:function(){
       var opts = this.options;
       var formatColumns = this.handleDataTableOption();

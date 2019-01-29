@@ -91,7 +91,7 @@ $(document).ready(function() {
           width:200
         }
       },
-      // dataTables的columns参数写这里
+      // dataTables的aoColumnDefs参数写这里
       aoColumnDefs:{
         column2:{
           width:200,
