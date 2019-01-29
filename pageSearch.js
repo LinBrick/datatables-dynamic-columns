@@ -94,6 +94,7 @@
     },
     // 开始设置
     actionSetting:function(){
+      var that = this;
       var list = this.options.customColumns.pageFieldList;
       dialog({
         title:'设置',
@@ -101,13 +102,40 @@
           list:list
         }),
         width:300,
-        height:300,
+        height:400,
         onshow:function(){
           $('#sortable',this.node).sortable().disableSelection();
         },
         skin:'scroll-y',
         okValue:'保存',
-        ok:function(){},
+        ok:function(){
+          var fieldList = [];
+          $('li',this.node).each(function(){
+            var data = $(this).data();
+            fieldList.push({
+              display: $('[name="display"]',this).prop('checked'),
+              displayName: data.displayName,
+              fieldName: data.fieldName
+            });
+          });
+          if(!localStorage){
+            alert('抱歉，浏览器不支持localStorage，数据保存失败！')
+          }else{
+            // 这里做本地缓存，可以换成ajax
+            localStorage.setItem(that.options.customColumns.pageId,JSON.stringify(fieldList));
+            alert('保存成功');
+            that.options.customColumns.pageFieldList = fieldList;
+            that.columnOptions = that.handleDataTableOption();
+            that.renderThead();
+            // 销毁datatables实例
+            that.table && that.table.destroy();
+            // 用新的options重新渲染dataTables
+            that.table && (that.table = $(that.options.table,that.options.container).DataTable($.extend(that.columnOptions, that.options.DataTable)));
+            //关闭窗口
+            this.close().remove();
+          }
+          return false;
+        },
         cancelValue:'取消',
         cancel:true
       }).showModal();

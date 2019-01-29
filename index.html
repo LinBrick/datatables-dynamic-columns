@@ -39,10 +39,12 @@
   <!-- 设置模板 -->
   <script id="setting-template" type="text/html">
     <ul id="sortable">
-      <li class="ui-state-default">
-        <span>Item 1</span>
-        <input type="checkbox" name="display" title="是否展示" />
+      {{each list item}}
+      <li class="ui-state-default" data-display-name="{{item.displayName}}" data-field-name="{{item.fieldName}}">
+        <span>{{item.displayName}}</span>
+        <input type="checkbox" name="display" title="是否展示" {{item.display ? 'checked' : ''}} />
       </li>
+      {{/each}}
     </ul>
   </script>
 </body>

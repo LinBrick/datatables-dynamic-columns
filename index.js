@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+  var pageId = '0000001';
   var dataList = [];
   var dataLength = 100;
   var pageFieldList = [
@@ -57,6 +58,13 @@ $(document).ready(function() {
 
   //初始化数据
   (function(){
+    // 如果有保存数据的话就覆盖默认pageFieldList
+    var fieldList = JSON.parse(localStorage.getItem(pageId));
+    if(localStorage && fieldList){
+      pageFieldList = fieldList;
+    }
+
+    // 制造假数据
     for(var i = 0;i < dataLength;i++){
       dataList.push({
         column1:'Row ' + (i + 1) + ' Data 1',
@@ -75,7 +83,7 @@ $(document).ready(function() {
   
   new $.pageSearch({
     customColumns:{
-      pageId:'0000001',
+      pageId: pageId,
       pageFieldList:pageFieldList,
       // dataTables的columns参数写这里
       columns:{
