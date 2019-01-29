@@ -126,9 +126,10 @@
             alert('保存成功');
             that.options.customColumns.pageFieldList = fieldList;
             that.columnOptions = that.handleDataTableOption();
-            that.renderThead();
             // 销毁datatables实例
             that.table && that.table.destroy();
+            // 重绘表头
+            that.renderThead();
             // 用新的options重新渲染dataTables
             that.table && (that.table = $(that.options.table,that.options.container).DataTable($.extend(that.columnOptions, that.options.DataTable)));
             //关闭窗口
