@@ -43,7 +43,6 @@
 
 # 关于例子代码说明
 * 本例子主要是基于dataTables来实现的。[中文官网](http://www.datatables.club/)
-* 由于作者偷懒，引用了几个插件来实现功能，只是给大家做个演示而已，提供思路：
-  * art-template (javascript 模板引擎)。[官网](https://github.com/aui/art-template)
+* 由于作者偷懒，引用了两个个插件来实现功能，只是给大家做个演示而已，如有看不懂插件相关代码的可以查看各自的官网了解：
   * artDialog(经典的网页对话框组件，帮助实现弹窗效果)。[官网](http://aui.github.io/artDialog/)
   * jquery-ui(帮助实现拖拽排序效果)。[官网](https://jqueryui.com/)

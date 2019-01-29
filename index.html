@@ -14,7 +14,6 @@
   <script type="text/javascript" language="javascript" src="DataTables-1.10.15/media/js/jquery.js"></script>
   <script type="text/javascript" language="javascript" src="jquery-ui-1.10.4/jquery-ui-1.10.4.custom.min.js"></script>
   <script type="text/javascript" language="javascript" src="DataTables-1.10.15/media/js/jquery.dataTables.js"></script>
-  <script type="text/javascript" language="javascript" src="art-template-4.13.1/template-web.js"></script>
   <script type="text/javascript" language="javascript" src="artDialog-6.0.4/dist/dialog-min.js"></script>
   <script type="text/javascript" language="javascript" src="pageSearch.js"></script>
 	<script type="text/javascript" language="javascript" src="index.js"></script>
@@ -35,18 +34,5 @@
       </div>
     </div>
   </div>
-
-  <!-- 设置模板 -->
-  <script id="setting-template" type="text/html">
-    <h4 class="green">可拖拽排序列表</h4>
-    <ul id="sortable">
-      {{each list item}}
-      <li class="ui-state-default" data-display-name="{{item.displayName}}" data-field-name="{{item.fieldName}}">
-        <span>{{item.displayName}}</span>
-        <input type="checkbox" name="display" title="是否展示" {{item.display ? 'checked' : ''}} />
-      </li>
-      {{/each}}
-    </ul>
-  </script>
 </body>
 </html>

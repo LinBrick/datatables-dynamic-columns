@@ -98,9 +98,7 @@
       var list = this.options.customColumns.pageFieldList;
       dialog({
         title:'设置',
-        content:template('setting-template', {
-          list:list
-        }),
+        content:this.getDialogContent(list),
         width:300,
         height:400,
         onshow:function(){
@@ -140,6 +138,20 @@
         cancelValue:'取消',
         cancel:true
       }).showModal();
+    },
+    // 生成弹窗的内容
+    getDialogContent:function(list){
+      var html = '';
+      html += '<h4 class="green">可拖拽排序列表</h4>';
+      html += '<ul id="sortable">';
+      for(var i = 0;i < list.length;i++){
+        html += '<li class="ui-state-default" data-display-name="' + list[i].displayName + '" data-field-name="' + list[i].fieldName + '">';
+        html += '<span>' + list[i].displayName + '</span>';
+        html += '<input type="checkbox" name="display" title="是否展示" ' + (list[i].display ? 'checked="checked"' : '') + ' />';
+        html += '</li>';
+      }
+      html += '</ul>';
+      return html;
     }
   });
 
